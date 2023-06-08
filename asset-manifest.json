@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/quiz-app/static/css/main.bebe7cf1.css",
-    "main.js": "/quiz-app/static/js/main.bfc14dc3.js",
+    "main.css": "/quiz-app/static/css/main.0d0819e6.css",
+    "main.js": "/quiz-app/static/js/main.99b568cc.js",
     "static/js/787.9e90ff23.chunk.js": "/quiz-app/static/js/787.9e90ff23.chunk.js",
     "static/media/finish1.png": "/quiz-app/static/media/finish1.8bdf5fd67a62014b270f.png",
     "static/media/finish3.png": "/quiz-app/static/media/finish3.f395fed4fb9485a9f515.png",
@@ -48,6 +48,7 @@
     "static/media/GrtskZetta-Regular.woff2": "/quiz-app/static/media/GrtskZetta-Regular.efcd705a160fe271fdf5.woff2",
     "static/media/arrow.png": "/quiz-app/static/media/arrow.c99b96a5e85ffa777773.png",
     "static/media/background.png": "/quiz-app/static/media/background.95ccbe75c94e8e9560a1.png",
+    "static/media/final_background_mob.png": "/quiz-app/static/media/final_background_mob.05b1cbbeca625cd36e14.png",
     "static/media/btn_tip.png": "/quiz-app/static/media/btn_tip.a997b95d473dafc1b7b9.png",
     "static/media/avatar.png": "/quiz-app/static/media/avatar.27932f138936e10692a2.png",
     "static/media/logo.svg": "/quiz-app/static/media/logo.70ca6218c1c09279374dbcce367f13fb.svg",
@@ -62,12 +63,12 @@
     "static/media/green_active.svg": "/quiz-app/static/media/green_active.22ee41726c9f184efbc9.svg",
     "index.html": "/quiz-app/index.html",
     "static/media/close.svg": "/quiz-app/static/media/close.e53855720eb08c3fb8299d70d4094d4c.svg",
-    "main.bebe7cf1.css.map": "/quiz-app/static/css/main.bebe7cf1.css.map",
-    "main.bfc14dc3.js.map": "/quiz-app/static/js/main.bfc14dc3.js.map",
+    "main.0d0819e6.css.map": "/quiz-app/static/css/main.0d0819e6.css.map",
+    "main.99b568cc.js.map": "/quiz-app/static/js/main.99b568cc.js.map",
     "787.9e90ff23.chunk.js.map": "/quiz-app/static/js/787.9e90ff23.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bebe7cf1.css",
-    "static/js/main.bfc14dc3.js"
+    "static/css/main.0d0819e6.css",
+    "static/js/main.99b568cc.js"
   ]
 }
