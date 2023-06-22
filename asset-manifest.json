@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/quiz-app/static/css/main.fff0a8d8.css",
-    "main.js": "/quiz-app/static/js/main.20dfbef6.js",
+    "main.css": "/quiz-app/static/css/main.c0e768b7.css",
+    "main.js": "/quiz-app/static/js/main.79ef155f.js",
     "static/js/787.9e90ff23.chunk.js": "/quiz-app/static/js/787.9e90ff23.chunk.js",
     "static/media/finish1.png": "/quiz-app/static/media/finish1.8bdf5fd67a62014b270f.png",
     "static/media/finish3.png": "/quiz-app/static/media/finish3.f395fed4fb9485a9f515.png",
@@ -17,6 +17,8 @@
     "static/media/sugar2.png": "/quiz-app/static/media/sugar2.7ce4f2ae404e453c075d.png",
     "static/media/sugar.png": "/quiz-app/static/media/sugar.40f447b92910721df78c.png",
     "static/media/contactDecor.png": "/quiz-app/static/media/contactDecor.635de8d198b13c73f5cd.png",
+    "static/media/juice4.png": "/quiz-app/static/media/juice4.be0980bfb34b9bae33c5.png",
+    "static/media/juice3.png": "/quiz-app/static/media/juice3.88baf0b8f26281888af9.png",
     "static/media/GrtskGiga-LightItalic.woff": "/quiz-app/static/media/GrtskGiga-LightItalic.1884429a3fb9a15644b7.woff",
     "static/media/star_green.png": "/quiz-app/static/media/star_green.382655a748f72790c53b.png",
     "static/media/star_purple.png": "/quiz-app/static/media/star_purple.214cf8b4ce2ade0e46cf.png",
@@ -67,12 +69,12 @@
     "static/media/test2.svg": "/quiz-app/static/media/test2.881c87a792800d49f7be.svg",
     "index.html": "/quiz-app/index.html",
     "static/media/close.svg": "/quiz-app/static/media/close.e53855720eb08c3fb8299d70d4094d4c.svg",
-    "main.fff0a8d8.css.map": "/quiz-app/static/css/main.fff0a8d8.css.map",
-    "main.20dfbef6.js.map": "/quiz-app/static/js/main.20dfbef6.js.map",
+    "main.c0e768b7.css.map": "/quiz-app/static/css/main.c0e768b7.css.map",
+    "main.79ef155f.js.map": "/quiz-app/static/js/main.79ef155f.js.map",
     "787.9e90ff23.chunk.js.map": "/quiz-app/static/js/787.9e90ff23.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fff0a8d8.css",
-    "static/js/main.20dfbef6.js"
+    "static/css/main.c0e768b7.css",
+    "static/js/main.79ef155f.js"
   ]
 }
