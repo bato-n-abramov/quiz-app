@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/quiz-app/static/css/main.2044e0ba.css",
-    "main.js": "/quiz-app/static/js/main.11de9d75.js",
+    "main.css": "/quiz-app/static/css/main.a2a34565.css",
+    "main.js": "/quiz-app/static/js/main.865d2f83.js",
     "static/js/787.9e90ff23.chunk.js": "/quiz-app/static/js/787.9e90ff23.chunk.js",
     "static/media/finish1.png": "/quiz-app/static/media/finish1.8bdf5fd67a62014b270f.png",
     "static/media/finish3.png": "/quiz-app/static/media/finish3.f395fed4fb9485a9f515.png",
-    "static/media/finish2.png": "/quiz-app/static/media/finish2.5bf6a6c52be0e0f93288.png",
+    "static/media/finish2.png": "/quiz-app/static/media/finish2.2966ca796a9da4ea563d.png",
     "static/media/not_found.png": "/quiz-app/static/media/not_found.28c860c0465294bd0b6d.png",
     "static/media/sneakers2.png": "/quiz-app/static/media/sneakers2.0bf5f365d208645e11e0.png",
     "static/media/juice2.png": "/quiz-app/static/media/juice2.1ce4ff55ceae97fe2996.png",
@@ -33,6 +33,7 @@
     "static/media/GrtskZetta-Medium.woff": "/quiz-app/static/media/GrtskZetta-Medium.1d9510bee3e4871b09d4.woff",
     "static/media/GrtskZetta-Light.woff": "/quiz-app/static/media/GrtskZetta-Light.20a6900b68c8e792105f.woff",
     "static/media/GrtskZetta-Extralight.woff": "/quiz-app/static/media/GrtskZetta-Extralight.45c1ed3b82f41e5a7c3b.woff",
+    "static/media/chain.png": "/quiz-app/static/media/chain.c27e22af84ef292aa11d.png",
     "static/media/GrtskZetta-Bold.woff": "/quiz-app/static/media/GrtskZetta-Bold.4f3d13b0eff74f67ab26.woff",
     "static/media/Barlow-Regular.woff": "/quiz-app/static/media/Barlow-Regular.0ad3555330ebfb8b97a3.woff",
     "static/media/GrtskZetta-Thin.woff": "/quiz-app/static/media/GrtskZetta-Thin.db02f7d624d431222222.woff",
@@ -69,12 +70,12 @@
     "static/media/test2.svg": "/quiz-app/static/media/test2.881c87a792800d49f7be.svg",
     "index.html": "/quiz-app/index.html",
     "static/media/close.svg": "/quiz-app/static/media/close.e53855720eb08c3fb8299d70d4094d4c.svg",
-    "main.2044e0ba.css.map": "/quiz-app/static/css/main.2044e0ba.css.map",
-    "main.11de9d75.js.map": "/quiz-app/static/js/main.11de9d75.js.map",
+    "main.a2a34565.css.map": "/quiz-app/static/css/main.a2a34565.css.map",
+    "main.865d2f83.js.map": "/quiz-app/static/js/main.865d2f83.js.map",
     "787.9e90ff23.chunk.js.map": "/quiz-app/static/js/787.9e90ff23.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2044e0ba.css",
-    "static/js/main.11de9d75.js"
+    "static/css/main.a2a34565.css",
+    "static/js/main.865d2f83.js"
   ]
 }
