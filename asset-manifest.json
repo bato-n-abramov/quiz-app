@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/quiz-app/static/css/main.69b65428.css",
-    "main.js": "/quiz-app/static/js/main.383bc1d0.js",
+    "main.css": "/quiz-app/static/css/main.632572cd.css",
+    "main.js": "/quiz-app/static/js/main.8a9544e3.js",
     "static/js/787.9e90ff23.chunk.js": "/quiz-app/static/js/787.9e90ff23.chunk.js",
     "static/media/finish1.png": "/quiz-app/static/media/finish1.8bdf5fd67a62014b270f.png",
     "static/media/finish3.png": "/quiz-app/static/media/finish3.f395fed4fb9485a9f515.png",
@@ -63,19 +63,19 @@
     "static/media/back.svg": "/quiz-app/static/media/back.eec4d3990269e3373db5.svg",
     "static/media/back_mob.svg": "/quiz-app/static/media/back_mob.ceeb44e0448538b229b2.svg",
     "static/media/purple_active.svg": "/quiz-app/static/media/purple_active.7482380f2f353d27d21f.svg",
-    "static/media/shapes2.svg": "/quiz-app/static/media/shapes2.621df422705500ab669d5259e53067db.svg",
     "static/media/star2.svg": "/quiz-app/static/media/star2.fbbf0e214f5a7d3d1f68.svg",
     "static/media/send_active.svg": "/quiz-app/static/media/send_active.d044fad4196b0139ae59.svg",
+    "static/media/shapes.svg": "/quiz-app/static/media/shapes.abf6991e16fe37d7709a6cac00c34a50.svg",
     "static/media/back_after.svg": "/quiz-app/static/media/back_after.78d375fb5272c0169538.svg",
     "static/media/green_active.svg": "/quiz-app/static/media/green_active.22ee41726c9f184efbc9.svg",
     "index.html": "/quiz-app/index.html",
     "static/media/close.svg": "/quiz-app/static/media/close.e53855720eb08c3fb8299d70d4094d4c.svg",
-    "main.69b65428.css.map": "/quiz-app/static/css/main.69b65428.css.map",
-    "main.383bc1d0.js.map": "/quiz-app/static/js/main.383bc1d0.js.map",
+    "main.632572cd.css.map": "/quiz-app/static/css/main.632572cd.css.map",
+    "main.8a9544e3.js.map": "/quiz-app/static/js/main.8a9544e3.js.map",
     "787.9e90ff23.chunk.js.map": "/quiz-app/static/js/787.9e90ff23.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.69b65428.css",
-    "static/js/main.383bc1d0.js"
+    "static/css/main.632572cd.css",
+    "static/js/main.8a9544e3.js"
   ]
 }
