@@ -1,0 +1,901 @@
+.draggable-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &.animate {
+    pointer-events: none;
+  }
+}
+
+.draggable-item {
+  cursor: grabbing !important;
+  position: fixed;
+
+  @for $i from 1 through 11 {
+    &.gravity-#{$i} {
+      animation: gravity-#{$i} 6s linear infinite;
+    }
+  }
+
+  &.animation-1 {
+    width: 60px;
+    height: 60px;
+  }
+
+  &.animation-2 {
+    width: 330px;
+    height: 370px;
+
+   @media (max-width: 1025px) {
+      width: 240px;
+      height: 240px;
+    }
+
+   @media (max-width: 480px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &.animation-3 {
+    width: 320px;
+    height: 370px;
+
+   @media (max-width: 1025px) {
+      width: 240px;
+      height: 240px;
+    }
+
+   @media (max-width: 480px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &.animation-4 {
+    width: 320px;
+    height: 420px;
+
+   @media (max-width: 1025px) {
+      width: 240px;
+      height: 240px;
+    }
+
+   @media (max-width: 480px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &.animation-5 {
+    width: 300px;
+    height: 400px;
+
+   @media (max-width: 1025px) {
+      width: 240px;
+      height: 240px;
+    }
+
+   @media (max-width: 480px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &.animation-6 {
+    width: 330px;
+    height: 440px;
+
+   @media (max-width: 1025px) {
+      width: 240px;
+      height: 240px;
+    }
+
+   @media (max-width: 480px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &.animation-7 {
+    width: 200px;
+    height: 150px;
+
+   @media (max-width: 1025px) {
+      width: 240px;
+      height: 240px;
+    }
+
+   @media (max-width: 480px) {
+      display: none;
+    }
+  }
+
+  &.animation-8 {
+    width: 140px;
+    height: 120px;
+
+   @media (max-width: 1025px) {
+      width: 100px;
+      height: 100px;
+    }
+
+   @media (max-width: 480px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &.animation-9 {
+    width: 310px;
+    height: 330px;
+
+   @media (max-width: 1025px) {
+      width: 240px;
+      height: 240px;
+    }
+
+   @media (max-width: 480px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &.animation-10 {
+    width: 300px;
+    height: 320px;
+
+   @media (max-width: 1025px) {
+      width: 240px;
+      height: 240px;
+    }
+
+   @media (max-width: 480px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &.animation-11 {
+    width: 150px;
+    height: 200px;
+
+   @media (max-width: 1025px) {
+      width: 280px;
+      height: 280px;
+    }
+
+   @media (max-width: 480px) {
+      display: none;
+    }
+  }
+
+ @media (max-width: 1025px) {
+    width: 280px;
+    height: 280px;
+  }
+
+  &.animate {
+    $animationCount: 11;
+
+    @for $i from 1 through $animationCount {
+      $animationName: "bounceElems-#{$i}";
+
+      &.animation-#{$i} {
+        animation: #{$animationName} 0.5s forwards linear 0.2s,
+          roll 3s forwards ease-in-out 1s;
+      }
+    }
+  }
+
+  .img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .img-border {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transform: scale(1.2);
+    display: none;
+  }
+
+  &.dragging {
+    .img {
+      display: none;
+    }
+    .img-border {
+      display: block;
+    }
+  }
+
+  &.gravity {
+    animation: gravity 8s ease infinite;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  @keyframes bounceElems-1 {
+    0% {
+      top: 90%;
+    }
+    20% {
+      top: 72%;
+    }
+    60% {
+      top: 90%;
+    }
+    // 45% {
+    //   top: 90%;
+    // }
+    80% {
+      top: 85%;
+    }
+    // 80% {
+    //   top: 68%;
+    // }
+    100% {
+      top: 90%;
+    }
+  }
+
+  @keyframes bounceElems-2 {
+    0% {
+      top: 70%;
+    }
+    20% {
+      top: 52%;
+    }
+    60% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 64%;
+    // }
+    80% {
+      top: 65%;
+    }
+    // 80% {
+    //   top: 65%;
+    // }
+    100% {
+      top: 70%;
+    }
+  }
+
+  @keyframes bounceElems-3 {
+    0% {
+      top: 70%;
+    }
+    20% {
+      top: 58%;
+    }
+    60% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 63%;
+    // }
+    80% {
+      top: 68%;
+    }
+    // 80% {
+    //   top: 66%;
+    // }
+    100% {
+      top: 70%;
+    }
+  }
+
+  @keyframes bounceElems-4 {
+    0% {
+      top: 70%;
+    }
+    20% {
+      top: 51%;
+    }
+    60% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 64%;
+    // }
+    80% {
+      top: 68%;
+    }
+    // 80% {
+    //   top: 68%;
+    // }
+    100% {
+      top: 70%;
+    }
+  }
+
+  @keyframes bounceElems-5 {
+    0% {
+      top: 70%;
+    }
+    20% {
+      top: 53%;
+    }
+    80% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 65%;
+    // }
+    // 65% {
+    //   top: 70%;
+    // }
+    80% {
+      top: 68%;
+    }
+    100% {
+      top: 70%;
+    }
+  }
+
+  @keyframes bounceElems-6 {
+    0% {
+      top: 70%;
+    }
+    20% {
+      top: 60%;
+    }
+    60% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 65%;
+    // }
+    // 65% {
+    //   top: 70%;
+    // }
+    80% {
+      top: 68%;
+    }
+    100% {
+      top: 70%;
+    }
+  }
+
+  @keyframes bounceElems-7 {
+    0% {
+      top: 80%;
+    }
+    20% {
+      top: 56%;
+    }
+    60% {
+      top: 80%;
+    }
+    // 45% {
+    //   top: 62%;
+    // }
+    // 65% {
+    //   top: 70%;
+    // }
+    80% {
+      top: 75%;
+    }
+    100% {
+      top: 80%;
+    }
+  }
+
+  @keyframes bounceElems-8 {
+    0% {
+      top: 90%;
+    }
+    20% {
+      top: 68%;
+    }
+    60% {
+      top: 90%;
+    }
+    // 45% {
+    //   top: 85%;
+    // }
+    // 65% {
+    //   top: 90%;
+    // }
+    80% {
+      top: 88%;
+    }
+    100% {
+      top: 90%;
+    }
+  }
+
+  @keyframes bounceElems-9 {
+    0% {
+      top: 70%;
+    }
+    20% {
+      top: 52%;
+    }
+    60% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 64%;
+    // }
+    80% {
+      top: 68%;
+    }
+    // 80% {
+    //   top: 68%;
+    // }
+    100% {
+      top: 70%;
+    }
+  }
+
+  @keyframes bounceElems-10 {
+    0% {
+      top: 70%;
+    }
+    20% {
+      top: 50%;
+    }
+    60% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 65%;
+    // }
+    80% {
+      top: 68%;
+    }
+    // 80% {
+    //   top: 69%;
+    // }
+    100% {
+      top: 70%;
+    }
+  }
+
+  @keyframes bounceElems-11 {
+    0% {
+      top: 80%;
+    }
+    20% {
+      top: 55%;
+    }
+    60% {
+      top: 80%;
+    }
+    // 45% {
+    //   top: 80%;
+    // }
+    // 65% {
+    //   top: 70%;
+    // }
+    80% {
+      top: 75%;
+    }
+    100% {
+      top: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  @keyframes bounceElems-1 {
+    0% {
+      top: 100%;
+    }
+    20% {
+      top: 72%;
+    }
+    60% {
+      top: 90%;
+    }
+    // 45% {
+    //   top: 90%;
+    // }
+    80% {
+      top: 85%;
+    }
+    // 80% {
+    //   top: 68%;
+    // }
+    100% {
+      top: 100%;
+    }
+  }
+
+  @keyframes bounceElems-2 {
+    0% {
+      top: 100%;
+    }
+    20% {
+      top: 52%;
+    }
+    60% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 64%;
+    // }
+    80% {
+      top: 65%;
+    }
+    // 80% {
+    //   top: 65%;
+    // }
+    100% {
+      top: 100%;
+    }
+  }
+
+  @keyframes bounceElems-3 {
+    0% {
+      top: 80%;
+    }
+    20% {
+      top: 58%;
+    }
+    60% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 63%;
+    // }
+    80% {
+      top: 68%;
+    }
+    // 80% {
+    //   top: 66%;
+    // }
+    100% {
+      top: 80%;
+    }
+  }
+
+  @keyframes bounceElems-4 {
+    0% {
+      top: 80%;
+    }
+    20% {
+      top: 51%;
+    }
+    60% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 64%;
+    // }
+    80% {
+      top: 68%;
+    }
+    // 80% {
+    //   top: 68%;
+    // }
+    100% {
+      top: 80%;
+    }
+  }
+
+  @keyframes bounceElems-5 {
+    0% {
+      top: 80%;
+    }
+    20% {
+      top: 53%;
+    }
+    80% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 65%;
+    // }
+    // 65% {
+    //   top: 70%;
+    // }
+    80% {
+      top: 68%;
+    }
+    100% {
+      top: 80%;
+    }
+  }
+
+  @keyframes bounceElems-6 {
+    0% {
+      top: 100%;
+    }
+    20% {
+      top: 60%;
+    }
+    60% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 65%;
+    // }
+    // 65% {
+    //   top: 70%;
+    // }
+    80% {
+      top: 68%;
+    }
+    100% {
+      top: 85%;
+    }
+  }
+
+  @keyframes bounceElems-7 {
+    0% {
+      top: 100%;
+    }
+    20% {
+      top: 56%;
+    }
+    60% {
+      top: 80%;
+    }
+    // 45% {
+    //   top: 62%;
+    // }
+    // 65% {
+    //   top: 70%;
+    // }
+    80% {
+      top: 75%;
+    }
+    100% {
+      top: 85%;
+    }
+  }
+
+  @keyframes bounceElems-8 {
+    0% {
+      top: 100%;
+    }
+    20% {
+      top: 68%;
+    }
+    60% {
+      top: 90%;
+    }
+    // 45% {
+    //   top: 85%;
+    // }
+    // 65% {
+    //   top: 90%;
+    // }
+    80% {
+      top: 88%;
+    }
+    100% {
+      top: 95%;
+    }
+  }
+
+  @keyframes bounceElems-9 {
+    0% {
+      top: 100%;
+    }
+    20% {
+      top: 52%;
+    }
+    60% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 64%;
+    // }
+    80% {
+      top: 68%;
+    }
+    // 80% {
+    //   top: 68%;
+    // }
+    100% {
+      top: 90%;
+    }
+  }
+
+  @keyframes bounceElems-10 {
+    0% {
+      top: 100%;
+    }
+    20% {
+      top: 50%;
+    }
+    60% {
+      top: 70%;
+    }
+    // 45% {
+    //   top: 65%;
+    // }
+    80% {
+      top: 68%;
+    }
+    // 80% {
+    //   top: 69%;
+    // }
+    100% {
+      top: 90%;
+    }
+  }
+
+  @keyframes bounceElems-11 {
+    0% {
+      top: 100%;
+    }
+    20% {
+      top: 55%;
+    }
+    60% {
+      top: 80%;
+    }
+    // 45% {
+    //   top: 80%;
+    // }
+    // 65% {
+    //   top: 70%;
+    // }
+    80% {
+      top: 75%;
+    }
+    100% {
+      top: 80%;
+    }
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: translate(110vw, 0) rotate(900deg);
+  }
+}
+
+@keyframes gravity-1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10%, -10%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes gravity-2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-5%, 1%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes gravity-3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes gravity-4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-2%, 4%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes gravity-5 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(2%, -4%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes gravity-6 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-2%, 3%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes gravity-7 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-2%, 4%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes gravity-8 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -10%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes gravity-9 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(1%, -5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes gravity-10 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-3%, 3%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes gravity-11 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(3%, 3%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

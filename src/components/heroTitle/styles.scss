@@ -1,0 +1,93 @@
+.Hero__title {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  z-index: 12;
+  pointer-events: none;
+
+  &.animate {
+    animation: hideTitle ease 2s forwards;
+  }
+
+  .container {
+   @media (max-width: 1025px) {
+      height: 100%;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+   @media (max-width: 1025px) {
+      justify-content: center;
+      height: 85%;
+    }
+  }
+
+  &-title {
+    margin-bottom: 20px;
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    text-align: center;
+
+   @media (max-width: 1025px) {
+      margin-top: auto;
+      padding-top: 75px;
+      font-size: 55px;
+    }
+
+   @media (max-width: 768px) {
+      font-size: 32px;
+    }
+  }
+
+  &-text {
+    margin-bottom: 48px;
+    font-family: "Grtsk Zetta";
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+
+   @media (max-width: 768px) {
+      max-width: 235px;
+      margin: 0 auto;
+      font-size: 16px;
+    }
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.active {
+      &::before {
+        opacity: 1;
+      }
+    }
+
+   @media (max-width: 1025px) {
+      margin-top: auto;
+    }
+  }
+}
+
+@keyframes hideTitle {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  100% {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-300%);
+  }
+}

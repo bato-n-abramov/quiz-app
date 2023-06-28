@@ -1,0 +1,302 @@
+.header {
+  padding-top: 40px;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+
+ @media (max-width: 1025px) {
+    padding-top: 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 50px;
+
+   @media (max-width: 1025px) {
+      justify-content: space-between;
+      gap: 0;
+    }
+
+   @media (max-width: 768px) {
+      gap: 10px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    pointer-events: all;
+
+    &-wrapper {
+     @media (max-width: 1025px) {
+        flex: 1;
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 185px;
+    height: 60px;
+    padding: 0 20px;
+    position: relative;
+    background: #fff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.09);
+    transition: box-shadow 0.5s ease;
+    font-family: "Grtsk Zetta";
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+
+    strong {
+      font-family: "Grtsk Giga";
+      font-weight: 700;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+   @media (max-width: 1025px) {
+      width: 160px;
+      padding: 0 15px;
+      justify-content: flex-start;
+    }
+
+   @media (max-width: 480px) {
+      width: 130px;
+      padding: 0 10px;
+      justify-content: flex-start;
+    }
+
+   @media (max-width: 480px) {
+      font-size: 12px;
+    }
+
+    svg {
+     @media (max-width: 1025px) {
+        width: 66px;
+        height: 16px;
+      }
+    }
+
+    svg path {
+      transition: fill 0.5s ease;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 10px #8bf62a;
+    }
+
+    &:hover {
+      svg path {
+        fill: #8bf62a;
+      }
+    }
+
+    &:active {
+      box-shadow: 0px 0px 10px #000;
+
+      svg path {
+        fill: #000;
+      }
+    }
+  }
+
+  &__avatar {
+    width: 80px;
+    height: 60px;
+    position: relative;
+    background-color: #8bf62a;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+
+   @media (max-width: 1025px) {
+      width: 63px;
+      height: 58px;
+      margin-left: -74px;
+      border-radius: 0 4px 4px 0;
+      border: none;
+      border-left: 1px solid #dddddd;
+    }
+
+    &:hover {
+      img {
+        top: 35px;
+      }
+
+      &:active {
+        background-color: #6018f2;
+      }
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: top 0.5s ease;
+
+     @media (max-width: 1025px) {
+        left: -10px;
+        top: 10px;
+      }
+    }
+  }
+
+  &__stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    padding: 0 32px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    background-color: #fff;
+    border: 1px solid #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    &-wrapper {
+      display: none;
+
+      &.show {
+        display: flex;
+      }
+
+     @media (max-width: 1025px) {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .NotFound & {
+      display: none;
+    }
+
+   @media (max-width: 1025px) {
+      padding: 0;
+      width: 120px;
+      font-size: 14px;
+    }
+
+   @media (max-width: 375px) {
+      padding: 0 15px;
+    }
+
+    &.animate {
+      display: none;
+    }
+
+    &-count {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 20px 6px 6px;
+      gap: 10px;
+      height: 60px;
+      border: 1px solid #000000;
+      font-family: "Grtsk Zetta";
+      border-radius: 5px;
+      background-color: #fff;
+      text-transform: uppercase;
+
+     @media (max-width: 375px) {
+        padding: 20px 10px;
+      }
+
+      &.show {
+        display: flex;
+      }
+
+      .currentQuestion {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.03em;
+        background-color: #000;
+        font-family: "Grtsk Giga";
+
+       @media (max-width: 480px) {
+          width: 24px;
+          height: 24px;
+          font-size: 12px;
+        }
+      }
+
+      .countQuestion {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: -0.03em;
+
+       @media (max-width: 375px) {
+          font-size: 12px;
+        }
+
+        span {
+          font-family: "Grtsk Giga";
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  &__mute {
+    position: relative;
+    z-index: 999;
+    pointer-events: all;
+
+    &-wrapper {
+     @media (max-width: 1025px) {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    button {
+      width: 60px;
+      height: 60px;
+      border: 1px solid #dddddd;
+      font-family: "Grtsk Giga";
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 5px;
+      background-color: #fff;
+      appearance: none;
+      cursor: pointer;
+      color: #000;
+      transition: box-shadow 0.5s ease;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.09);
+
+     @media (max-width: 480px) {
+        width: max-content;
+        font-size: 12px;
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 10px #8bf62a;
+      }
+    }
+  }
+}

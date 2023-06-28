@@ -1,0 +1,62 @@
+{
+  "name": "quiz-app",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://bato-n-abramov.github.io/quiz-app",
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "box2dweb": "^2.1.0-b",
+    "classnames": "^2.3.2",
+    "drag-react": "^1.1.1",
+    "formik": "^2.2.9",
+    "gh-pages": "^5.0.0",
+    "gsap": "^3.12.0",
+    "html-react-parser": "^4.0.0",
+    "lottie-react": "^2.4.0",
+    "matter-js": "^0.19.0",
+    "react": "^18.2.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^18.2.0",
+    "react-dom-box2d": "^0.4.1-patch.1",
+    "react-fast-marquee": "^1.6.0",
+    "react-matter-js": "^1.0.5",
+    "react-physics": "^0.1.1",
+    "react-router-dom": "^6.11.2",
+    "react-scripts": "5.0.1",
+    "react-spring": "^9.7.1",
+    "react-transition-group": "^4.4.5",
+    "sass": "^1.62.1",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.1.1"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

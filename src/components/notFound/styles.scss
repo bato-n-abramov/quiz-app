@@ -1,0 +1,41 @@
+.NotFound {
+  height: 100vh;
+  background: center/cover no-repeat url("../../images/not_found.png");
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 80px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+   @media (max-width: 1025px) {
+      font-size: 32px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    font-family: "Grtsk Zetta";
+    font-size: 21px;
+    font-weight: 300;
+    text-transform: uppercase;
+
+   @media (max-width: 1025px) {
+      font-size: 18px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}

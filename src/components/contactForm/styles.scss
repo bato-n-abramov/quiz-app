@@ -1,0 +1,445 @@
+.ContactForm {
+  opacity: 0;
+
+  &.visible-enter-done {
+    opacity: 1;
+  }
+
+  &__overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: #fff;
+    opacity: 0.3;
+  }
+
+  &__form-wrapper {
+    width: 100%;
+    max-width: 1020px;
+    position: fixed;
+    top: 53%;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    border: 1px solid #000;
+
+   @media (max-height: 680px) {
+      top: 40%;
+    }
+
+   @media (max-width: 768px) {
+      height: 100%;
+      top: 50%;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: block;
+      top: 8px;
+      right: -8px;
+      background-color: #000;
+      z-index: -1;
+    }
+  }
+
+  &__form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #fff;
+    border-bottom: 1px solid #000;
+    font-family: "Barlow";
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+
+   @media (max-width: 768px) {
+      padding: 40px 20px 15px;
+      font-size: 16px;
+    }
+  }
+
+  &__form-close {
+    cursor: pointer;
+  }
+
+  &__form-body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 30px;
+    background-color: #6018f2;
+
+   @media (max-width: 1025px) {
+      padding: 40px 20px 15px;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      width: 100%;
+      max-width: 560px;
+
+     @media (max-width: 1025px) {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+   @media (max-width: 1025px) {
+      flex-direction: column;
+      justify-content: unset;
+      height: 100%;
+      overflow: auto;
+      flex-wrap: unset;
+      overflow: hidden;
+    }
+  }
+
+  &__img {
+    margin-bottom: -100px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+   @media (max-width: 1025px) {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      bottom: -80px;
+      right: -80px;
+      margin-bottom: 0;
+      transform: rotate(45deg);
+    }
+
+   @media (max-width: 768px) {
+      width: 300px;
+      height: 300px;
+      bottom: 0;
+    }
+
+   @media (max-width: 680px) and (max-height: 750px) {
+      bottom: -100px;
+    }
+  }
+
+  &__form-title {
+    max-width: 850px;
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: 300;
+    color: #fff;
+    text-transform: uppercase;
+
+    strong {
+      font-weight: 700;
+    }
+
+   @media (max-width: 375px) {
+      font-size: 20px;
+    }
+  }
+
+  &__form-submit {
+    position: absolute;
+    bottom: -125px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 400px;
+    height: 100px;
+    color: #000;
+
+    &:hover {
+      &::after {
+        transform: translate(-50%, -50%) scale(1.2, 1);
+      }
+    }
+
+    &::before {
+      width: 500px;
+      height: 100px;
+      top: 57%;
+      background: center / 100% no-repeat url("/images/send_active.svg");
+    }
+
+    &::after {
+      width: 400px;
+      height: 100px;
+      background: center / 100% no-repeat url("/images/send_btn.png");
+    }
+
+   @media (max-width: 1025px) {
+      position: relative;
+      right: 0;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: 50px;
+      z-index: 1;
+      color: #000;
+      transform: unset;
+
+      &::after {
+        background: center / contain no-repeat url("/images/send_btn.png");
+      }
+    }
+
+   @media (max-width: 768px) {
+      width: 370px;
+      bottom: 60px;
+    }
+
+   @media (max-height: 750px) and (min-width: 1024px) {
+      bottom: -100px;
+    }
+
+   @media (max-width: 375px) {
+      width: 270px;
+
+      &::after {
+        width: 300px;
+      }
+    }
+  }
+
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 560px;
+    height: 30px;
+    margin-bottom: 30px;
+
+    &.w-50 {
+      width: calc(50% - 15px);
+
+     @media (max-width: 1025px) {
+        width: 100%;
+      }
+    }
+
+    &.w-100 {
+      width: 100%;
+    }
+
+    label {
+      font-family: "Grtsk Zetta";
+      font-size: 18px;
+      font-weight: 300;
+      color: #fff;
+      text-transform: uppercase;
+      transform-origin: left top;
+      transition: 200ms ease all;
+
+      &.label {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    div {
+      position: absolute;
+      right: 0;
+      bottom: -20px;
+      text-align: right;
+      font-family: "Grtsk Zetta";
+      font-size: 14px;
+      font-weight: 300;
+      color: #ff4848;
+    }
+
+    .input-field {
+      border-radius: 0;
+      display: flex;
+      font-size: 100%;
+      line-height: 25px;
+      text-shadow: none;
+      border: 0;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      flex: 1 1 auto;
+      background-color: transparent;
+
+      &.filled + .label {
+        top: -25px;
+        font-size: 14px;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:focus + .label {
+        top: -25px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .checkbox-wrapper {
+    max-width: 560px;
+    position: relative;
+
+    label {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-family: "Grtsk Zetta";
+      font-size: 14px;
+      font-weight: 300;
+      color: #fff;
+
+     @media (max-width: 375px) {
+        font-size: 12px;
+      }
+
+      input {
+        width: 20px;
+        height: 20px;
+        margin-right: 20px;
+      }
+
+      span {
+        display: flex;
+        gap: 3px;
+      }
+    }
+
+    div {
+      position: absolute;
+      right: 0;
+      bottom: -20px;
+      text-align: right;
+      font-family: "Grtsk Zetta";
+      font-size: 14px;
+      font-weight: 300;
+      color: #ff4848;
+    }
+
+    a {
+      color: inherit;
+      text-underline-offset: 4px;
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+
+  &__popup-wrapper {
+    width: 100%;
+    max-width: 600px;
+    height: 360px;
+    position: fixed;
+    top: 53%;
+    left: 50%;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    border: 1px solid #000;
+
+   @media (max-width: 768px) {
+      height: 100%;
+      max-width: 100%;
+      top: 0;
+      left: 0;
+      transform: unset;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: block;
+      top: 8px;
+      right: -8px;
+      background-color: #000;
+      z-index: -1;
+    }
+  }
+
+  &__popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: #fff;
+    text-transform: uppercase;
+
+    &-title {
+      font-family: "Grtsk Giga";
+      font-size: 28px;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+    }
+
+    &-mail {
+      font-family: "Grtsk Zetta";
+      font-size: 21px;
+      letter-spacing: -0.03em;
+      font-weight: 300;
+    }
+  }
+
+  &__popup-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #6018f2;
+  }
+
+  &__popup-img {
+    height: 150px;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(25deg);
+
+   @media (max-width: 768px) {
+      top: 0;
+      height: 250px;
+      transform: translate(-76%, 10%) rotate(25deg) scale(-1);
+    }
+
+    &-mob {
+      height: 250px;
+      position: absolute;
+      bottom: 25%;
+      right: -10%;
+      transform: translate(0, 50%) rotate(343deg);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+     @media (min-width: 768px) {
+        display: none;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,473 @@
+.QuizAnswer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 99;
+  padding: 40px;
+  opacity: 0;
+  background: center / cover no-repeat url("../../images/background.png") #fff;
+  transition: opacity 0.5s ease-in-out;
+
+  &__shapes {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  @media (max-width: 1025px) {
+    top: 80px;
+    padding: 20px;
+    background: none;
+  }
+
+  &--visible {
+    opacity: 1;
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      background-color: #8bf62a;
+      transform: scale(1000);
+      border-radius: 50%;
+    }
+
+    &.wrong {
+      &::after {
+        animation: scaleBack 2s linear forwards 1s;
+      }
+    }
+  }
+
+  &__animation-wrapp {
+    transform: translateX(150vw);
+    width: 100%;
+    height: 100%;
+
+    &.animate {
+      animation: showWrapp 1s ease forwards;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    gap: 70px;
+    padding: 80px;
+    max-height: 720px;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #8bf62a;
+
+    &.wrong {
+      background-color: transparent;
+
+      @media (max-width: 1025px) {
+        width: auto;
+        margin: 0 -10px;
+      }
+    }
+
+    @media (max-height: 650px) {
+      padding: 40px 80px;
+      overflow-y: visible;
+    }
+
+    @media (max-width: 1025px) {
+      height: 100%;
+      max-height: 780px;
+      padding: 40px;
+      border-radius: 5px;
+      min-height: 640px;
+    }
+
+    @media (max-width: 480px) {
+      max-height: 720px;
+      min-height: 600px;
+      padding: 40px 20px;
+    }
+
+    @media (max-width: 375px) {
+      overflow-y: scroll;
+      overflow-x: hidden;
+      max-height: 500px;
+      min-height: unset;
+    }
+  }
+
+  &__title {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: "Grtsk Zetta";
+    font-size: 69px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: -0.03em;
+    text-align: center;
+    text-transform: uppercase;
+    transform: translateY(-120vh);
+    position: relative;
+    z-index: 2;
+
+    &.animate {
+      animation: animUp 1s ease 1s forwards;
+    }
+
+    @media (max-height: 700px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 1025px) {
+      font-size: 32px;
+    }
+
+    @media (max-width: 480px) {
+      max-width: 270px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 1025px) {
+      flex-direction: column;
+      // height: 80%;
+    }
+  }
+
+  &__animation {
+    width: 100%;
+    max-width: 320px;
+    position: relative;
+    height: 200px;
+    transform: translateY(100vh);
+    z-index: 3;
+    flex: 1 0 auto;
+
+    &.left {
+      & > .QuizAnswer__lottie {
+        left: -85px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      height: 150px;
+    }
+
+    &.animate {
+      animation: animLeft 1s ease 1.5s forwards;
+    }
+
+    > .QuizAnswer__lottie {
+      position: absolute;
+      left: -38%;
+      top: -390px;
+      width: 100vw;
+      z-index: 99;
+      pointer-events: none;
+
+      @media (min-width: 1600px) {
+        top: -490px;
+      }
+
+      @media (max-width: 1025px) {
+        top: -200px;
+        width: 100vw;
+        left: 0;
+      }
+
+      @media (max-width: 768px) {
+        top: -23em;
+        width: 30em;
+        left: 0;
+      }
+
+      @media (max-width: 480px) {
+        top: -18em;
+        width: 22em;
+        left: 0;
+      }
+
+      @media (max-width: 400px) and (max-height: 750px) {
+        width: 20em;
+      }
+    }
+  }
+
+  &__next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -100px;
+    right: -65px;
+    z-index: 1;
+
+    @media (max-width: 991px) {
+      right: 6px;
+      bottom: -75px;
+    }
+
+    @media (max-height: 750px) and (max-width: 400px) {
+      bottom: -100px;
+    }
+  }
+
+  &__tip {
+    position: relative;
+    width: 100%;
+    max-width: 730px;
+    z-index: 1;
+    bottom: 60px;
+    transform: translateY(100vh) rotate(-6deg);
+
+    @media (max-width: 1025px) {
+      bottom: unset;
+    }
+
+    &.animate {
+      animation: up 1s ease 0.5s forwards;
+    }
+
+    &-wrapper {
+      background-color: #fff;
+      padding: 50px 50px 70px;
+
+      @media (max-width: 768px) {
+        min-height: auto;
+        padding: 30px 20px 60px;
+        margin-top: -35px;
+      }
+
+      @media (max-width: 480px) {
+        height: 220px;
+        overflow-y: scroll;
+      }
+
+      @media (max-width: 375px) {
+        padding: 30px 20px 10px;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: -5px;
+      bottom: -5px;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      z-index: -1;
+
+      @media (max-width: 1025px) {
+        right: -10px;
+        bottom: -10px;
+      }
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-family: "Barlow";
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+
+    p {
+      font-family: "Grtsk Zetta";
+      font-size: 32px;
+      letter-spacing: -0.003em;
+      font-weight: 300;
+
+      @media (max-height: 650px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__back {
+    position: absolute;
+    top: 10px;
+    left: -15px;
+    opacity: 0;
+    transition: opacity 1s ease 1.8s;
+
+    &.animate {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(100vh) rotate(-6deg);
+  }
+
+  100% {
+    transform: translateY(0%) rotate(-6deg);
+  }
+}
+
+@keyframes animUp {
+  0% {
+    transform: translateY(100vh);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes animLeft {
+  0% {
+    transform: translateX(-100vh);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes showWrapp {
+  0% {
+    transform: translateX(150vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleBack {
+  0% {
+    transform: scale(1000);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.QuizAnswer__shapes {
+  $animationCount: 7;
+
+  display: none;
+
+  @for $i from 1 through $animationCount {
+    $animationName: "path#{$i}";
+
+    &.animate {
+      display: block;
+
+      .path#{$i} {
+        animation: #{$animationName} 0.5s forwards linear 2s;
+      }
+    }
+  }
+}
+
+@keyframes path1 {
+  0% {
+    transform: translateX(0) scale(1) translateY(0);
+  }
+  100% {
+    transform: translateX(-20px) scale(0.9) translateY(4px);
+  }
+}
+
+@keyframes path2 {
+  0% {
+    transform: translate(0) scale(1);
+  }
+  100% {
+    transform: translate(200px, 146px) scale(0.8);
+  }
+}
+
+@keyframes path3 {
+  0% {
+    transform: translateY(0) scaleY(1);
+  }
+  100% {
+    transform: translateY(77px) scaleY(0.9);
+  }
+}
+
+@keyframes path4 {
+  0% {
+    transform: translate(0, 0) scaleX(1);
+  }
+  100% {
+    transform: translate(-5px, 35px) scaleX(0.8);
+  }
+}
+
+@keyframes path5 {
+  0% {
+    transform: translate(0) rotate(0) scale(1);
+    transform-origin: left bottom;
+  }
+  100% {
+    transform: translate(0px, 82px) rotate(2deg) scale(0.9);
+  }
+}
+
+@keyframes path6 {
+  0% {
+    transform: translateX(0) scaleY(1);
+  }
+  100% {
+    transform: translateX(20px) scaleY(0.7);
+  }
+}
+
+@keyframes path7 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translate(20px, 50px) rotate(0deg);
+  }
+}
+
+@keyframes path8 {
+  0% {
+    transform: scale(1);
+    transform-origin: top center 50px;
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
