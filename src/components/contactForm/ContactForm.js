@@ -10,6 +10,7 @@ import classNames from "classnames";
 import { hover_buttons_audio, click_audio } from "../../utils/audios";
 
 import "./styles.scss";
+import ContactBtn from "../contactBtn/ContactBtn";
 
 const ContactForm = ({
   visibleForm,
@@ -17,6 +18,7 @@ const ContactForm = ({
   visiblePopup,
   setVisiblePopup,
   onFormSubmit,
+  setClick,
 }) => {
   const initialValues = {
     name: "",
@@ -26,6 +28,10 @@ const ContactForm = ({
   };
 
   const [hideForm, setHideForm] = useState(false);
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const [click, setbtnClick] = useState(false);
 
   const hoverAudioRef = useRef(null);
   const clickAudioRef = useRef(null);
@@ -38,18 +44,24 @@ const ContactForm = ({
   }, []);
 
   const playHoverAudio = () => {
+    setIsHovered(true);
     clearTimeout(hoverTimeoutRef.current);
     hoverTimeoutRef.current = setTimeout(() => {
-      hoverAudioRef.current.currentTime = 0; 
+      hoverAudioRef.current.currentTime = 0;
       hoverAudioRef.current.play();
-    }, 100); 
+    }, 100);
   };
 
   const playClickAudio = () => {
+    setbtnClick(true);
+    setTimeout(() => {
+      setbtnClick(false);
+    }, 1000);
     clickAudioRef.current.play();
   };
 
   const stopHoverAudio = () => {
+    setIsHovered(false);
     clearTimeout(hoverTimeoutRef.current);
     hoverAudioRef.current.pause();
     hoverAudioRef.current.currentTime = 0;
@@ -86,7 +98,7 @@ const ContactForm = ({
             onFormSubmit();
             setVisiblePopup("");
             setVisibleForm(false);
-          }, 3500);
+          }, 2000);
         },
         (error) => {
           console.log(error.text);
@@ -96,6 +108,7 @@ const ContactForm = ({
 
   const handleCloseClick = () => {
     setVisibleForm(false);
+    setClick(false);
   };
 
   return visibleForm ? (
@@ -204,7 +217,7 @@ const ContactForm = ({
                     onMouseEnter={playHoverAudio}
                     onMouseLeave={stopHoverAudio}
                   >
-                    yass! <br /> drop it
+                    <ContactBtn playAnim={isHovered} click={click} />
                   </button>
                 </Form>
               )}

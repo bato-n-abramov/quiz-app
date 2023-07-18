@@ -27,34 +27,17 @@ const Header = ({
       audioElement.src = quiz_final_audio;
       audioElement.loop = true;
       audioElement.volume = 0.05;
-      audioElement.play();
     } else {
       audioElement.src = main_audio;
       audioElement.loop = true;
       audioElement.volume = 0.05;
     }
-
-    const handleUserInteraction = () => {
-      document.removeEventListener("click", handleUserInteraction);
-      document.removeEventListener("keydown", handleUserInteraction);
-      audioElement.muted = false;
-      audioElement.play();
-      setAudioMuted(false);
-    };
-
-    document.addEventListener("click", handleUserInteraction);
-    document.addEventListener("keydown", handleUserInteraction);
-
-    return () => {
-      document.removeEventListener("click", handleUserInteraction);
-      document.removeEventListener("keydown", handleUserInteraction);
-      audioElement.pause();
-    };
   }, [isLast]);
 
   const playHoverAudio = () => {
     clearTimeout(hoverTimeoutRef.current);
     hoverTimeoutRef.current = setTimeout(() => {
+      hoverAudioRef.current.volume = 0.4;
       hoverAudioRef.current.currentTime = 0;
       hoverAudioRef.current.play();
     }, 100);
@@ -72,13 +55,14 @@ const Header = ({
 
   const muteAudio = () => {
     const audioElement = audioRef.current;
-    audioElement.muted = true;
+    audioElement.pause();
     setAudioMuted(true);
   };
 
   const unmuteAudio = () => {
     const audioElement = audioRef.current;
     audioElement.muted = false;
+    audioElement.play();
     setAudioMuted(false);
   };
 

@@ -33,9 +33,10 @@ const DraggableImages = ({ positionChanged }) => {
   const playDragAudio = () => {
     clearTimeout(hoverTimeoutRef.current);
     hoverTimeoutRef.current = setTimeout(() => {
-      dragAudioRef.current.currentTime = 0; 
+      dragAudioRef.current.volume = 0.8;
+      dragAudioRef.current.currentTime = 0;
       dragAudioRef.current.play();
-    }, 100); 
+    }, 100);
   };
 
   const stopDragAudio = () => {
@@ -152,7 +153,7 @@ const DraggableImages = ({ positionChanged }) => {
           );
         }
       })}
-      <audio ref={dragAudioRef} src={drag_audio} />
+      <audio ref={dragAudioRef} loop src={drag_audio} />
     </div>
   );
 };

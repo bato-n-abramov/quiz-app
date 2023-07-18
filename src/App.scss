@@ -67,6 +67,8 @@
   background-color: transparent;
   pointer-events: all;
   position: relative;
+  // background-image: url("./images/hover.gif");
+  background-size: contain;
 
   br {
     @media (min-width: 1025px) {
@@ -96,44 +98,44 @@
     }
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 54%;
-    width: 441px;
-    height: 200px;
-    background: center / 100% no-repeat url("/images/purple_active.svg");
-    z-index: 1;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   left: 50%;
+  //   top: 54%;
+  //   width: 441px;
+  //   height: 200px;
+  //   background: center / 100% no-repeat url("/images/purple_active.svg");
+  //   z-index: 1;
+  //   transform: translate(-50%, -50%);
+  //   opacity: 0;
+  //   transition: opacity 0.5s ease;
 
-    @media (max-width: 769px) {
-      width: 350px;
-    }
-  }
+  //   @media (max-width: 769px) {
+  //     width: 350px;
+  //   }
+  // }
 
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 466px;
-    height: 137px;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-    background: center / 100% no-repeat url("/images/star_purple.png");
-    transition: transform 0.5s ease;
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   left: 50%;
+  //   top: 50%;
+  //   width: 466px;
+  //   height: 137px;
+  //   z-index: -1;
+  //   transform: translate(-50%, -50%);
+  //   background: center / 100% no-repeat url("/images/star_purple.png");
+  //   transition: transform 0.5s ease;
 
-    @media (max-width: 769px) {
-      width: 390px;
-    }
+  //   @media (max-width: 769px) {
+  //     width: 390px;
+  //   }
 
-    @media (max-width: 375px) {
-      width: 300px;
-    }
-  }
+  //   @media (max-width: 375px) {
+  //     width: 300px;
+  //   }
+  // }
 }
 
 .btn-green {
@@ -162,59 +164,6 @@
 
   @media (max-width: 769px) {
     width: 300px;
-  }
-
-  @media (min-width: 1025px) {
-    &:hover {
-      &::after {
-        transform: translate(-50%, -50%) scale(1.3, 1);
-      }
-    }
-
-    &:active {
-      &::before {
-        opacity: 1;
-      }
-    }
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 696px;
-    height: 130px;
-    background: center / 100% no-repeat url("/images/green_active.svg");
-    z-index: 1;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-
-    @media (max-width: 769px) {
-      width: 350px;
-    }
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 466px;
-    height: 137px;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-    background: center / 100% no-repeat url("/images/star_green.png");
-    transition: transform 0.5s ease;
-
-    @media (max-width: 769px) {
-      width: 390px;
-    }
-
-    @media (max-width: 375px) {
-      width: 300px;
-    }
   }
 }
 
@@ -295,5 +244,71 @@
   100% {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+.hover__purple-wrapp {
+  position: absolute;
+  right: -77%;
+  top: -350px;
+  width: 1200px;
+  height: 800px;
+  pointer-events: none;
+
+  &.click {
+    width: 1500px;
+    right: -108%;
+  }
+
+  @media screen and (max-width: 1025px) {
+    right: -150%;
+  }
+}
+
+.hover__purple {
+  width: 100%;
+  height: 100%;
+}
+
+.hover__green-wrapp {
+  position: absolute;
+  right: auto;
+  left: auto;
+  top: -300px;
+  width: 1200px;
+  height: 800px;
+  pointer-events: none;
+
+  &.click {
+    animation: scale 1s linear;
+  }
+
+  &.result {
+    top: -350px;
+  }
+
+  @media screen and (max-width: 1025px) {
+    &.result {
+      right: auto;
+    }
+  }
+}
+
+.hover__green {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.7);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }

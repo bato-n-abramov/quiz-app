@@ -24,6 +24,8 @@ import sugar2 from "../../images/sugar2.png";
 import juice3 from "../../images/juice3.png";
 import juice4 from "../../images/juice4.png";
 
+import ResultBtn from "../resultBtn/resultBtn";
+
 import {
   hover_buttons_audio,
   click_audio,
@@ -44,6 +46,9 @@ const QuizFinish = ({ score }) => {
   const [visiblePopup, setVisiblePopup] = useState(false);
   const [btnStart, setBtnStart] = useState(false);
 
+  const [isHovered, setIsHovered] = useState(false);
+  const [click, setClick] = useState(false);
+
   const hoverAudioRef = useRef(null);
   const clickAudioRef = useRef(null);
   const hoverTimeoutRef = useRef(null);
@@ -59,6 +64,7 @@ const QuizFinish = ({ score }) => {
   }, []);
 
   const playHoverAudio = () => {
+    setIsHovered(true);
     clearTimeout(hoverTimeoutRef.current);
     hoverTimeoutRef.current = setTimeout(() => {
       hoverAudioRef.current.currentTime = 0;
@@ -85,6 +91,7 @@ const QuizFinish = ({ score }) => {
   };
 
   const stopHoverAudio = () => {
+    setIsHovered(false);
     clearTimeout(hoverTimeoutRef.current);
     hoverAudioRef.current.pause();
     hoverAudioRef.current.currentTime = 0;
@@ -96,6 +103,9 @@ const QuizFinish = ({ score }) => {
 
   const handleVisibleForm = () => {
     setVisibleForm(true);
+    setIsHovered(false);
+    stopHoverAudio();
+    setClick(true);
   };
 
   const [draggingElement, setDraggingElement] = useState(null);
@@ -273,7 +283,7 @@ const QuizFinish = ({ score }) => {
               onMouseEnter={playHoverAudio}
               onMouseLeave={stopHoverAudio}
             >
-              give me <br /> result!
+              <ResultBtn playAnim={isHovered} click={click} />
             </button>
           </div>
         )}
@@ -298,14 +308,15 @@ const QuizFinish = ({ score }) => {
         <ContactForm
           visibleForm={visibleForm}
           setVisibleForm={setVisibleForm}
+          setClick={setClick}
           visiblePopup={visiblePopup}
           setVisiblePopup={setVisiblePopup}
           onFormSubmit={handleFormSubmit}
         />
       </CSSTransition>
-      <audio ref={hoverAudioRef} src={hover_buttons_audio} />
+      <audio ref={hoverAudioRef} loop src={hover_buttons_audio} />
       <audio ref={clickAudioRef} src={click_audio} />
-      <audio ref={dragAudioRef} src={drag_audio} />
+      <audio ref={dragAudioRef} loop src={drag_audio} />
     </div>
   );
 };

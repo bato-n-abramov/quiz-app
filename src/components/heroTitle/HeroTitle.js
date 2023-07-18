@@ -1,18 +1,23 @@
 import { useState, useRef, useEffect } from "react";
 import { hover_buttons_audio, click_audio } from "../../utils/audios";
+import StartBtn from "../startBtn/StartBtn";
 import "./styles.scss";
 
 const HeroTitle = ({ positionChanged, onButtonClick }) => {
+  const [active, setActive] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [click, setClick] = useState(false);
+
+  const hoverAudioRef = useRef(null);
+  const clickAudioRef = useRef(null);
+  const hoverTimeoutRef = useRef(null);
+
   const handleButtonClick = () => {
     onButtonClick();
     setActive(true);
     playClickAudio();
+    setClick(true);
   };
-
-  const [active, setActive] = useState(false);
-  const hoverAudioRef = useRef(null);
-  const clickAudioRef = useRef(null);
-  const hoverTimeoutRef = useRef(null);
 
   useEffect(() => {
     return () => {
@@ -21,11 +26,12 @@ const HeroTitle = ({ positionChanged, onButtonClick }) => {
   }, []);
 
   const playHoverAudio = () => {
+    setIsHovered(true);
     clearTimeout(hoverTimeoutRef.current);
     hoverTimeoutRef.current = setTimeout(() => {
       hoverAudioRef.current.currentTime = 0;
       hoverAudioRef.current.play();
-    }, 100); 
+    }, 100);
   };
 
   const playClickAudio = () => {
@@ -33,6 +39,7 @@ const HeroTitle = ({ positionChanged, onButtonClick }) => {
   };
 
   const stopHoverAudio = () => {
+    setIsHovered(false);
     clearTimeout(hoverTimeoutRef.current);
     hoverAudioRef.current.pause();
     hoverAudioRef.current.currentTime = 0;
@@ -58,11 +65,11 @@ const HeroTitle = ({ positionChanged, onButtonClick }) => {
             onMouseEnter={playHoverAudio}
             onMouseLeave={stopHoverAudio}
           >
-            start <br /> quiz
+            <StartBtn playAnim={isHovered} click={click} />
           </button>
         </div>
       </div>
-      <audio ref={hoverAudioRef} src={hover_buttons_audio} />
+      <audio ref={hoverAudioRef} loop src={hover_buttons_audio} />
       <audio ref={clickAudioRef} src={click_audio} />
     </div>
   );

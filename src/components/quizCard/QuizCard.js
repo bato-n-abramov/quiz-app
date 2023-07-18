@@ -4,6 +4,7 @@ import { decorImages, decorImagesDrag } from "../../utils/images";
 import Parser from "html-react-parser";
 import { Draggable } from "drag-react";
 
+
 import { hover_buttons_audio, drag_audio } from "../../utils/audios";
 
 const QuizCard = ({
@@ -149,8 +150,8 @@ const QuizCard = ({
           </div>
         </div>
       )}
-      <audio ref={hoverAudioRef} src={hover_buttons_audio} />
-      <audio ref={dragAudioRef} src={drag_audio} />
+      <audio ref={hoverAudioRef} loop src={hover_buttons_audio} />
+      <audio ref={dragAudioRef}  loop src={drag_audio} />
     </>
   );
 };

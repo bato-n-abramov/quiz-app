@@ -17,8 +17,13 @@ import abstract2Mob from "../../animations/mob/abstract2.json";
 import ropeMob from "../../animations/mob/rope.json";
 import hatMob from "../../animations/mob/hat.json";
 import sugarMob from "../../animations/mob/sugar.json";
-import Parser from "html-react-parser";
+
+import hoverAnswer from "../../animations/hoverAnswer.json";
+import hoverFinish from "../../animations/hoverFinish.json";
+
 import "./styles.scss";
+
+import HoverBtn from "../hoverBtn/HoverBtn";
 
 import {
   hover_buttons_audio,
@@ -41,12 +46,16 @@ const QuizAnswer = ({
   finish,
 }) => {
   const lottieRef = useRef();
-  const [animationData, setAnimationData] = useState(null);
+
   const hoverAudioRef = useRef(null);
   const clickAudioRef = useRef(null);
 
   const winAudioRef = useRef(null);
   const loseAudioRef = useRef(null);
+
+  const [animationData, setAnimationData] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [click, setClick] = useState(false);
 
   const audio = useMemo(
     () => new Audio(audios[currentQuestion]),
@@ -55,8 +64,10 @@ const QuizAnswer = ({
 
   const handleClick = () => {
     lottieRef.current?.play();
+    audio.volume = 0.2;
     audio.play();
     playClickAudio();
+    setClick(true);
   };
 
   const handleAnimationComplete = () => {
@@ -112,6 +123,7 @@ const QuizAnswer = ({
   const playHoverAudio = useCallback(() => {
     hoverAudioRef.current.currentTime = 0;
     hoverAudioRef.current.play();
+    setIsHovered(true);
   }, []);
 
   const playClickAudio = useCallback(() => {
@@ -121,8 +133,10 @@ const QuizAnswer = ({
   useEffect(() => {
     const playResultAudio = () => {
       if (isCorrect) {
+        winAudioRef.current.volume = 0.1;
         winAudioRef.current.play();
       } else {
+        loseAudioRef.current.volume = 0.1;
         loseAudioRef.current.play();
       }
     };
@@ -168,11 +182,6 @@ const QuizAnswer = ({
               className={`QuizAnswer__animation ${
                 showQuizAnswer ? "animate" : ""
               } ${currentQuestion === 6 ? "left" : ""}`}
-              onMouseEnter={playHoverAudio}
-              onMouseLeave={() => {
-                hoverAudioRef.current.pause();
-                hoverAudioRef.current.currentTime = 0;
-              }}
             >
               <Lottie
                 lottieRef={lottieRef}
@@ -196,16 +205,22 @@ const QuizAnswer = ({
                   onMouseLeave={() => {
                     hoverAudioRef.current.pause();
                     hoverAudioRef.current.currentTime = 0;
+                    setIsHovered(false);
                   }}
                 >
-                  {finish ? "Finish" : Parser("Next <br /> question")}
+                  <HoverBtn
+                    playAnim={isHovered}
+                    click={click}
+                    animation={finish ? hoverFinish : hoverAnswer}
+                  />
+                  {/* {finish ? "Finish" : Parser("Next <br /> question")} */}
                 </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <audio ref={hoverAudioRef} src={hover_buttons_audio} />
+      <audio ref={hoverAudioRef} loop src={hover_buttons_audio} />
       <audio ref={clickAudioRef} src={click_audio} />
       <audio ref={winAudioRef} src={win_audio} />
       <audio ref={loseAudioRef} src={lose_audio} />

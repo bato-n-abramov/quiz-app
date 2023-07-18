@@ -1,5 +1,5 @@
 import "./App.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "./components/header/Header";
 import DraggableImages from "./components/draggableImage/DraggableImages";
 import HeroTitle from "./components/heroTitle/HeroTitle";

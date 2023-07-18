@@ -156,31 +156,12 @@
 
   &__form-submit {
     position: absolute;
-    bottom: -125px;
+    bottom: -60px;
     right: 50%;
     transform: translateX(50%);
     width: 400px;
     height: 100px;
     color: #000;
-
-    &:hover {
-      &::after {
-        transform: translate(-50%, -50%) scale(1.2, 1);
-      }
-    }
-
-    &::before {
-      width: 500px;
-      height: 100px;
-      top: 57%;
-      background: center / 100% no-repeat url("/images/send_active.svg");
-    }
-
-    &::after {
-      width: 400px;
-      height: 100px;
-      background: center / 100% no-repeat url("/images/send_btn.png");
-    }
 
    @media (max-width: 1025px) {
       position: relative;

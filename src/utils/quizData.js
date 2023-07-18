@@ -12,7 +12,7 @@ export const quizData = [
   },
   {
     id: 1,
-    question: "brand guidelines serve to you as",
+    question: "brand guidelines serve to <br/> you as",
     isAnswered: false,
     options: [
       { answer: "a stylebook", isCorrect: true },
