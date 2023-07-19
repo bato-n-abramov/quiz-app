@@ -27,6 +27,10 @@ const ContactForm = ({
     privacyPolicy: false,
   };
 
+  const service = process.env.REACT_APP_SERVICE || "default_service";
+  const template = process.env.REACT_APP_TEMPLATE || "default_template";
+  const pass = process.env.REACT_APP_PASS || "default_pass";
+
   const [hideForm, setHideForm] = useState(false);
 
   const [isHovered, setIsHovered] = useState(false);
@@ -83,27 +87,20 @@ const ContactForm = ({
       to_email: values.email,
       from_name: values.name,
     };
-    emailjs
-      .send(
-        "service_5tzsrbg",
-        "template_93igw7d",
-        templateParams,
-        "q_wBsfwkp0-2Em0Ov"
-      )
-      .then(
-        (result) => {
-          setHideForm(true);
-          setVisiblePopup(values.email);
-          setTimeout(() => {
-            onFormSubmit();
-            setVisiblePopup("");
-            setVisibleForm(false);
-          }, 2000);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.send(service, template, templateParams, pass).then(
+      (result) => {
+        setHideForm(true);
+        setVisiblePopup(values.email);
+        setTimeout(() => {
+          onFormSubmit();
+          setVisiblePopup("");
+          setVisibleForm(false);
+        }, 2000);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   const handleCloseClick = () => {
